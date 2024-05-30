@@ -29,15 +29,15 @@ BNB Chain - Binance Smart Chain contract v2: 0x405be90996e7f995a08c2fbd8d8822ef5
 When the contract was updated to the new secure form, the token had it's symbol set in some dex's as JET even though it is JTS.
 
 
-**DApp**
-Vite bundler and HMR
-React 18.2 front-end using JSX files and following typescript coding practices
-Ethers.js v6.12.1 for blockchain interaction
-Web3Modal for WalletConnect v2 protocol to support full range of wallet types.
+#### DApp
+- Vite bundler and HMR
+- React 18.2 front-end using JSX files and following typescript coding practices
+- Web3Modal for WalletConnect v2 protocol to support full range of wallet types.
+- Ethers.js v6.12.1 for blockchain interaction
 
-API's:
-BSCScan API - contract instantiatiion and balances
-CoinGecko API - priceData
-Qucicknode API - TipTap transaction submission
+#### API's:
+- BSCScan API - contract instantiatiion and balances
+- CoinGecko API - priceData
+- Qucicknode API - TipTap transaction submission
 
 
