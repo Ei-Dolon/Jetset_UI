@@ -3,7 +3,7 @@ Jetset Wallet and DApp frontend - includes _**TipTap**_ (Jetset DApp for easy cr
 
 ##  The _Jetset Project_ 
 is a BNB Chain based platform for a luxury lifestyle and wellness utility token, leveraging the power of NFT's.  
-Started by Maverick - Media Personality (successful actor, then successful musician, now successful entrepreneur combining WEB3 Real Estate & Luxury Blockchain Rentals.  
+Started by Maverick - Media Personality (successful actor, then successful musician, now successful entrepreneur combining WEB3 Real Estate & Luxury Blockchain Rentals).  
 - *LUX*ury property rentals in Los Angeles, Las Vegas, and Miami.
 - *LUX*ury vehicle rentals
 - Exclusive GetAway Packages in Los Angeles, Las Vegas, and Miami.
