@@ -19,8 +19,8 @@ On the roadmap:
 
 
 ### Technical Details:
-The platform has been up and running since 2021 and has a strong Telegram community, it is a utility token (not a meme coin or a SEC target), it's CEO is entrepreneur or SEC that has strong backing from the Film and Music industryuses a  on the BNB Chain (previously BNB Smart Chain [BSC]).
-The Fungible Token is a BEP-20 token called Jetset (JTS) that has been active since 2021.
+The platform has been up and running since 2021 and has a strong Telegram community, it is a utility token (not a meme coin or a SEC target) on the BNB Chain (previously BNB Smart Chain [BSC]).
+The Fungible Token is a BEP-20 token called [Jetset (JTS)](https://jetsettoken.com) that has been active since 2021.
 The Non-Fungible Token (NFT) is hosted at [Jetset LUX](https://jetsetlux.com).
 
 BNB Chain - Binance Smart Chain contract v2: 0x405be90996e7f995a08c2fbd8d8822ef5b03466c
@@ -30,8 +30,8 @@ When the contract was updated to the new secure form, the token had it's symbol 
 
 
 #### DApp
-- Vite bundler and HMR
-- React 18.2 front-end using JSX files and following typescript coding practices
+- Vite v5.12 bundler and HMR
+- React v18.2 front-end using JSX files and following typescript coding practices
 - Web3Modal for WalletConnect v2 protocol to support full range of wallet types.
 - Ethers.js v6.12.1 for blockchain interaction
 
@@ -39,5 +39,8 @@ When the contract was updated to the new secure form, the token had it's symbol 
 - BSCScan API - contract instantiatiion and balances
 - CoinGecko API - priceData
 - Qucicknode API - TipTap transaction submission
+
+Clone this repository: [https://github.com/Ei-Dolon/Jetset_Wallet.git](https://github.com/Ei-Dolon/Jetset_Wallet.git)
+Start linux terminal, change directory (cd) to installation directory, list (ls -aL) directory to ensure you see
 
 
