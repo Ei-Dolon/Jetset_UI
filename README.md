@@ -41,6 +41,11 @@ When the contract was updated to the new secure form, the token had it's symbol 
 - Qucicknode API - TipTap transaction submission
 
 Clone this repository: [https://github.com/Ei-Dolon/Jetset_Wallet.git](https://github.com/Ei-Dolon/Jetset_Wallet.git)
-Start linux terminal, change directory (cd) to installation directory, list (ls -aL) directory to ensure you see
-
+Start linux terminal, change directory (cd) to installation directory, list (ls -aL) directory to ensure you see this file.
+Install dependencies:
+$ npm install
+Run development:
+$npm run dev
+Build project:
+$npm run build
 
