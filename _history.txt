@@ -1,0 +1,16 @@
+Server side scripting:
+Coinbase API php script created to read BNB and JTS price
+Cron job setup to run coinbase script every 10 minutes.
+
+Setup server to auto update security updates only
+Set php v8.1 as active version (cURL 7.87.0)
+Updated apicoinbase.php
+added nl2br to test output
+updated new call to jetset in usd, eur, gbp
+added coinbase api key from .env file in jesetlux.com/dapp/secure/
+uploaded php to secure folder
+set recursive permission on secure folder as 711
+output works perfectly so created cron job calling it every 10 mins (max rate)
+cron 0,10, * * * * *
+
+Setup github repository deploy to.dapp folder
