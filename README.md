@@ -49,7 +49,7 @@ Run development:
 Build project:  
 `$npm run build`  
   
-See the node.js build at Render: [Jetset Wallet](https://jetset-wallet-bqja.onrender.com/)  
+See the node.js build at Render: [Jetset Wallet](https://jetset.onrender.com)  
 - Currently shows a basic working example.
 - Buy button links to Flooz
 - TipTap button links to the TipTap frontend.
