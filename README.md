@@ -1,5 +1,5 @@
-# Jetset_Wallet
-Jetset Wallet and DApp frontend - includes _**TipTap**_ (Jetset DApp for easy crypto tipping/donating transfer), onramp crypto purchasing by _**Flooz**_.  
+# Jetset_UI
+Jetset DApp frontend - includes _**TipTap**_ (A Jetset DApp for easy crypto transfer for tipping/donation), onramp crypto purchasing by _**Flooz**_.  
 
 ##  The _Jetset Project_ 
 is a BNB Chain based platform for a luxury lifestyle and wellness utility token, leveraging the power of NFT's.  
@@ -32,8 +32,8 @@ When the contract was updated to the new secure form, the token had it's symbol 
 #### DApp
 - Vite v5.12 bundler and HMR
 - React v18.2 front-end using JSX files and following typescript coding practices
-- Web3Modal for WalletConnect v2 protocol to support full range of wallet types.
-- Ethers.js v6.12.1 for blockchain interaction
+- Reown AppKit for WalletConnect protocol to support full range of wallet types.
+- Ethers.js v6.12.1 blockchain interaction
 
 #### API's:
 - BSCScan API - contract instantiatiion and balances
@@ -49,7 +49,7 @@ Run development:
 Build project:  
 `$npm run build`  
   
-See the node.js build at Render: [Jetset Wallet](https://jetset.onrender.com)  
+See the node.js build at Render: [Jetset UI](https://jetset.onrender.com)  
 - Currently shows a basic working example.
 - Buy button links to Flooz
 - TipTap button links to the TipTap frontend.
