@@ -1,14 +1,20 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-     loader: { '.js': 'jsx' }
+  plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react(), tailwindcss()],
+  test: {
+    globals: true,
+    environment: "jsdom",
   },
-  outDir: "build",
-  plugins: [react()],
-  server: {
-    origin: 'https://jetsetlux.com/dapp',
-  },
-})
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  }
+});
