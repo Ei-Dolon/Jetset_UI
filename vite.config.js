@@ -1,12 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-//import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-//import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-//import { resolve } from "node:path";
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-
-});
+  resolve: {
+    alias: {
+      '@reown': path.resolve(__dirname, './src/reown')
+    }
+  }
+})
