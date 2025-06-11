@@ -1,0 +1,51 @@
+{
+	"short_name": "jetset",
+	"name": "Jetset UI",
+	"description": "Jetset Frontend DApp",
+	"start_url": "https://dapp.jetsettoken.com/",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#121212",
+	"icons": [
+		{
+			"src": "./favicon.ico",
+			"sizes": "16x16 32x32 48x48",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "./assets/icons/0x405be90996e7f995a08c2fbd8d8822ef5b03466c.svg",
+			"sizes": "25x25",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "./assets/icons/0x405be90996e7f995a08c2fbd8d8822ef5b03466c.png",
+			"sizes": "25x25",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/icons/jetset-icon.svg",
+			"sizes": "25x25",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "./assets/icons/jetset-icon.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/icons/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "apple-touch-icon"
+		},
+		{
+			"src": "./assets/icons/logo192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/icons/logo512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
