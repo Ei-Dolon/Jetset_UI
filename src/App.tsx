@@ -4,7 +4,7 @@ import { networks, projectId, metadata, ethersAdapter } from './config/index.tsx
 import { ActionButtonList } from './components/ActionButtonList.tsx';
 import { SmartContractActionButtonList } from './components/SmartContractActionButtonList.tsx';
 import { InfoList } from './components/InfoList.tsx';
-import { bsc } from '@reown/appkit/networks';
+//import { bsc } from '@reown/appkit/networks';
 import { useState } from 'react';
 
 import "./App.css"
@@ -12,51 +12,45 @@ import "./App.css"
 // Initialize AppKit *outside* the component render cycle
 // Create a AppKit instance
 createAppKit({
-  adapters: [ethersAdapter],
-  // Pass networks directly (type is now correctly inferred from config)
-  networks,
-  defaultNetwork: bsc, // Or your preferred default
-  metadata,
-  // Use non-null assertion `!` as projectId is checked runtime, needed for TypeScript
-  projectId,
-  themeMode: 'light',
-  features: {
-    analytics: true
-  }, // Optional features
+	adapters: [ethersAdapter],
+	// Pass networks directly (type is now correctly inferred from config)
+	networks,
+//	defaultNetwork: bsc, // Or your preferred default
+	metadata,
+	// Use non-null assertion `!` as projectId is checked runtime, needed for TypeScript
+	projectId,
+	themeMode: 'light',
+	features: {
+	analytics: true
+	}, // Optional features
 })
 
 export function App() {
-  const [transactionHash, setTransactionHash] = useState('');
-  const [signedMsg, setSignedMsg] = useState('');
-  const [balance, setBalance] = useState('');
+	const [transactionHash, setTransactionHash] = useState('');
+	const [signedMsg, setSignedMsg] = useState('');
+	const [balance, setBalance] = useState('');
 
-  const receiveHash = (hash: string) => {
-    setTransactionHash(hash); // Update the state with the transaction hash
-  };
+	const receiveHash = (hash: string) => {
+	setTransactionHash(hash); // Update the state with the transaction hash
+	};
 
-  const receiveSignedMsg = (signedMsg: string) => {
-    setSignedMsg(signedMsg); // Update the state with the transaction hash
-  };
+	const receiveSignedMsg = (signedMsg: string) => {
+	setSignedMsg(signedMsg); // Update the state with the transaction hash
+	};
 
-  const receivebalance = (balance: string) => {
-    setBalance(balance)
-  }
+	const receiveBalance = (balance: string) => {
+	setBalance(balance)
+	}
 
-  return (
-    <div className={"pages"}>
-      <h1>Jetset</h1>
-      <appkit-button />
-      <ActionButtonList sendHash={receiveHash} sendSignMsg={receiveSignedMsg} sendBalance={receivebalance} />
-      <SmartContractActionButtonList />
-      <div className="advice">
-        <p>
-          This projectId only works on localhost. <br />
-          Go to <a href="https://cloud.reown.com" target="_blank" className="link-button" rel="Reown Cloud">Reown Cloud</a> to get your own.
-        </p>
-      </div>
-      <InfoList hash={transactionHash} signedMsg={signedMsg} balance={balance} />
-    </div>
-  )
+	return (
+	<div className={"pages"}>
+		<h1>Jetset</h1>
+		<appkit-button />
+		<ActionButtonList sendHash={receiveHash} sendSignMsg={receiveSignedMsg} sendBalance={receiveBalance} />
+		<SmartContractActionButtonList />
+		<InfoList hash={transactionHash} signedMsg={signedMsg} balance={balance} />
+	</div>
+	)
 }
 
 export default App
