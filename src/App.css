@@ -75,13 +75,13 @@ button {
 
 button:hover {
   background-color: black;
-  color: white;
+  color: #6495ED;
 }
 
 button:active {
   background-color: #333;
   /* Dark gray on click */
-  color: white;
+  color: #6495ED;
 }
 
 h1 {
@@ -99,7 +99,7 @@ pre {
 
 .link-button {
   background-color: black;
-  color: white;
+  color: #6495ED;
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 5px;
@@ -113,7 +113,7 @@ pre {
 .link-button:hover {
   background-color: white;
   /* Change background to white on hover */
-  color: black;
+  color: #6495ED;
   /* Change text color to black on hover */
 }
 
@@ -139,7 +139,7 @@ body,
 #root {
   width: 360px;
   background-color: #121212;
-  color: rgba(255, 255, 255, 0.87);
+  color: #6495ED;
 }
 
 .header {
