@@ -1,4 +1,4 @@
-AssetFilename		x	y	frames
+﻿AssetFilename		x	y	frames
 logoGlow.png		306	132	2	153	132
 border.png			360	60
 Footer.png			5760	60	16	360	60
@@ -12,3 +12,5 @@ Receive.png			216	70	4	54	70
 ReceivePress.png		54	70
 TipTap.png			220	70	4	55	70
 TipTapPress.png		55	70
+
+
