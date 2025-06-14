@@ -10,7 +10,7 @@ export default defineConfig({
   outDir: "build",
   plugins: [react()],
   server: {
-    origin: 'https://jetsetlux.com/dapp',
+    origin: 'https://dapp.jetsettoken.com',
   },
   resolve: {
     alias: {
