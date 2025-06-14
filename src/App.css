@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Livvic:wght@300;400;500;600&display=swap");
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  font-family: Livvic, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 360px;
+  max-width: 100%;
+  color-scheme: light dark;
+  color: #6495ED;
+  background-color: #0b0b70;
 }
 
 html,
@@ -12,7 +20,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Livvic, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -61,17 +69,19 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 15px; /* Space between buttons */
+  margin: 15px;
+  /* Space between buttons */
 }
 
 button:hover {
   background-color: black;
-    color: white;
+  color: white;
 }
 
 button:active {
-  background-color: #333; /* Dark gray on click */
-    color: white;
+  background-color: #333;
+  /* Dark gray on click */
+  color: white;
 }
 
 h1 {
@@ -79,8 +89,10 @@ h1 {
 }
 
 pre {
-  white-space: pre-wrap; /* Wrap text */
-  word-wrap: break-word; /* Break long words */
+  white-space: pre-wrap;
+  /* Wrap text */
+  word-wrap: break-word;
+  /* Break long words */
   word-break: break-all;
 }
 
@@ -94,16 +106,197 @@ pre {
 }
 
 .link-button:hover {
-  background-color: #333;  /* Darken the background on hover */
+  background-color: #333;
+  /* Darken the background on hover */
 }
 
 .link-button:hover {
-  background-color: white;  /* Change background to white on hover */
-  color: black;  /* Change text color to black on hover */
+  background-color: white;
+  /* Change background to white on hover */
+  color: black;
+  /* Change text color to black on hover */
 }
 
 .advice {
   text-align: 'center';
-   margin-bottom: 10px;
-   line-height: 25px;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+
+
+a {
+  font-weight: 400;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+
+body,
+#root {
+  width: 360px;
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.header {
+  position: fixed;
+  z-index: 2;
+  padding: 4px;
+  height: 160px;
+  width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spriteLogo {
+  to {
+    background-position: -306px;
+  }
+}
+
+.animateLogo {
+  height: 132px;
+  width: 153px;
+  background: url("./assets/logoGlow.png") 0 0 no-repeat;
+  animation: spriteLogo 0.8s steps(2) infinite;
+}
+
+.mainWallet {
+  position: fixed;
+  top: 160px;
+  /* Adjust based on header height */
+  bottom: 100px;
+  /* Adjust based on footer height */
+  left: 0;
+  right: 0;
+  width: 360px;
+  overflow-y: auto;
+  overflow-x: auto;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* Adjust this value to control spacing between animations */
+  padding: 20px 0;
+  /* Add some vertical padding */
+}
+
+@keyframes spriteBtnReceive {
+  to {
+    background-position: -216px;
+  }
+}
+
+.animateReceive {
+  height: 70px;
+  width: 54px;
+  background: url("./assets/Receive.png") 0 0 no-repeat;
+  animation: spriteBtnReceive 1.6s steps(4) infinite;
+  cursor: pointer;
+}
+
+@keyframes spriteBtnBuy {
+  to {
+    background-position: -212px;
+  }
+}
+
+.animateBuy {
+  height: 72px;
+  width: 53px;
+  background: url("./assets/Buy.png") 0 0 no-repeat;
+  animation: spriteBtnBuy 1.6s steps(4) infinite;
+  cursor: pointer;
+}
+
+@keyframes spriteBtnTipTap {
+  to {
+    background-position: -220px;
+  }
+}
+
+.animateTipTap {
+  height: 70px;
+  width: 55px;
+  background: url("./assets/TipTap.png") 0 0 no-repeat;
+  animation: spriteBtnTipTap 1.6s steps(4) infinite;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 94px;
+  width: 360px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spriteBar {
+  to {
+    background-position: -5760px;
+  }
+}
+
+.animateBar {
+  height: 60px;
+  width: 360px;
+  background: url("./assets/Footer.png") 0 0 no-repeat;
+  animation: spriteBar 3.2s steps(16) infinite;
+  position: fixed;
+  left: 8px;
+  bottom: 0px;
+}
+
+@keyframes spriteBtnConnect {
+  to {
+    background-position: -264px;
+  }
+}
+
+#animateConnect {
+  height: 72px;
+  width: 66px;
+  background: url("./assets/Connect.png") 0 0 no-repeat;
+  animation: spriteBtnConnect 1.6s steps(4) infinite;
+  cursor: pointer;
+  bottom: 20px;
+  position: absolute;
+  z-index: 3;
+  border: 0px;
+}
+
+button {
+  border: 0px;
+}
+
+@keyframes spriteBtnConnecting {
+  to {
+    background-position: -132px;
+  }
+}
+
+#animateConnecting {
+  height: 72px;
+  width: 66px;
+  background: url("./assets/Connecting.png") 0 0 no-repeat;
+  animation: spriteBtnConnecting 0.8s steps(2) infinite;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#btnDisconnect {
+  height: 72px;
+  width: 66px;
+  background: url("./assets/Disconnect.png") 0 0 no-repeat;
+  cursor: pointer;
+  z-index: 3;
 }
