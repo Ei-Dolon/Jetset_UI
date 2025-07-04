@@ -1,8 +1,8 @@
 {
-	"short_name": "jetset",
+	"short_name": "Jetset",
 	"name": "Jetset UI",
 	"description": "Jetset Frontend DApp",
-	"start_url": "https://dapp.jetsettoken.com/",
+	"start_url": "https://jetsettoken.com/dapp/",
 	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#121212",
