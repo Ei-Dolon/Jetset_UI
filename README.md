@@ -30,10 +30,18 @@ When the contract was updated to the new secure form, the token had it's symbol 
   
 
 #### DApp
-- Vite v5.12 bundler and HMR
-- React v18.2 front-end using JSX files and following typescript coding practices
-- Reown AppKit for WalletConnect protocol to support full range of wallet types.
-- Ethers.js v6.12.1 blockchain interaction
+- Vite bundler and HMR
+- React v19.2 front-end using JSX files and following typescript coding practices
+- Web3-Onboard, Wagmi for wallet interaction, includes support for injected wallets, metamask, trust wallet, Coinbase, Hardware wallets (Trezor, Ledger), WalletConnect, Web3Auth
+- Ethers.js blockchain interaction
+- TypeScript v5.9.3
+- Node v24.13.1 LTS Krypton
+- 
+
+#### Dev Dependencies
+- ESLint
+- Prettier
+- Vitest
 
 #### API's:
 - BSCScan API - contract instantiatiion and balances
@@ -43,11 +51,11 @@ When the contract was updated to the new secure form, the token had it's symbol 
 Clone this repository: [https://github.com/Ei-Dolon/Jetset_Wallet.git](https://github.com/Ei-Dolon/Jetset_Wallet.git)  
 Start linux terminal, change directory (cd) to installation directory, list (ls -aL) directory to ensure you see this file.  
 Install dependencies:  
-`$ npm install`  
+`$ pnpm install`  
 Run development:  
-`$npm run dev`  
+`$ pnpm dev`  
 Build project:  
-`$npm run build`  
+`$ pnpm build`  
   
 See the node.js build at Render: [Jetset UI](https://jetset.onrender.com)  
 - Currently shows a basic working example.
