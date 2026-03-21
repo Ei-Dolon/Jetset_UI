@@ -1,6 +1,7 @@
 //src/App.tsx
 import { createAppKit } from '@reown/appkit/react';
-import { networks, projectId, metadata, ethersAdapter } from './config/index.tsx';
+//import { networks, projectId, metadata, ethersAdapter } from './config/index.tsx';
+import ( config, metadata } from './config/config.ts';
 import { ActionButtonList } from './components/ActionButtonList.tsx';
 import { SmartContractActionButtonList } from './components/SmartContractActionButtonList.tsx';
 import { InfoList } from './components/InfoList.tsx';
@@ -19,27 +20,27 @@ createAppKit({
 	metadata,
 	// Use non-null assertion `!` as projectId is checked runtime, needed for TypeScript
 	projectId,
-	themeMode: 'light',
+	themeMode: 'system',
 	features: {
 	analytics: true
 	}, // Optional features
 })
 
 export function App() {
-	const [transactionHash, setTransactionHash] = useState('');
-	const [signedMsg, setSignedMsg] = useState('');
+//	const [transactionHash, setTransactionHash] = useState('');
+//	const [signedMsg, setSignedMsg] = useState('');
 	const [balance, setBalance] = useState('');
 
-	const receiveHash = (hash: string) => {
-	setTransactionHash(hash); // Update the state with the transaction hash
-	};
+//	const receiveHash = (hash: string) => {
+//	setTransactionHash(hash); // Update the state with the transaction hash
+//	};
 
 	const receiveSignedMsg = (signedMsg: string) => {
-	setSignedMsg(signedMsg); // Update the state with the transaction hash
+		setSignedMsg(signedMsg); // Update the state with the transaction hash
 	};
 
 	const receiveBalance = (balance: string) => {
-	setBalance(balance)
+		setBalance(balance)
 	}
 
 	return (
