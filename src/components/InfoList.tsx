@@ -51,7 +51,7 @@ export const InfoList = ({ hash, signedMsg, balance }: InfoListProps) => {
     }, [hash, walletProvider])
 
   return (
-    < >
+    <>
         {balance && (
         <section>
             <h2>Balance: {balance}</h2>
