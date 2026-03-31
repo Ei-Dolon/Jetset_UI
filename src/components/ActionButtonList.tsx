@@ -1,6 +1,7 @@
-import { useDisconnect, useAppKit, useAppKitNetwork, useAppKitAccount, useAppKitProvider, useAppKitNetworkCore, type Provider } from '@reown/appkit/react'
-import { BrowserProvider, JsonRpcSigner, parseUnits, formatEther } from 'ethers'
-import { networks } from '../config/index.tsx'
+import { useDisconnect, useAppKit, useAppKitNetwork, useAppKitAccount, useAppKitProvider, useAppKitNetworkCore, type Provider } from '@reown/appkit/react';
+import { BrowserProvider, JsonRpcSigner, parseUnits, formatEther } from 'ethers';
+import { networks } from '../config/config.ts';
+import { useBalance, useEstimateGas, useSendTransaction, useSignMessage } from 'wagmi';
 
 // test transaction
 const TEST_TX = {
@@ -19,8 +20,8 @@ export const ActionButtonList = ({ sendHash, sendSignMsg, sendBalance }: ActionB
 	const { open } = useAppKit(); // AppKit hook to open the modal
 	const { chainId } = useAppKitNetworkCore();
 	const { switchNetwork } = useAppKitNetwork(); // AppKithook to switch network
-	const { address, isConnected } = useAppKitAccount() // AppKit hook to get the address and check if the user is connected
-	const { walletProvider } = useAppKitProvider<Provider>('eip155')
+	const { address, isConnected } = useAppKitAccount(); // AppKit hook to get the address and check if the user is connected
+	const { walletProvider } = useAppKitProvider<Provider>('eip155');
 
 
 	const handleDisconnect = async () => {
@@ -36,14 +37,19 @@ export const ActionButtonList = ({ sendHash, sendSignMsg, sendBalance }: ActionB
 		if (!walletProvider || !address) throw Error('user is disconnected');
 
 		const provider = new BrowserProvider(walletProvider, chainId);
-		const signer = new JsonRpcSigner(provider, address)
-
-		const tx = await signer.sendTransaction(TEST_TX);
-		await tx.wait(); // This will wait for the transaction to be mined
-
-		sendHash(tx.hash);
+		const signer = new JsonRpcSigner(provider, address);
+		try {
+			const tx = await signer.sendTransaction({
+				...TEST_TX,
+				gas // Add the gas to the transaction
+			});
+			await tx.wait(); // This will wait for the transaction to be mined
+			sendHash(tx.hash);
+		} catch (err) {
+				console.log('Error sending transaction:', err);
+		}
 	}
-	/*
+
 		const { data: gas } = useEstimateGas({ ...TEST_TX }); // Wagmi hook to estimate gas
 		const { data: hash, sendTransaction, } = useSendTransaction(); // Wagmi hook to send a transaction
 		const { signMessageAsync } = useSignMessage() // Wagmi hook to sign a message
@@ -58,18 +64,7 @@ export const ActionButtonList = ({ sendHash, sendSignMsg, sendBalance }: ActionB
 			}
 		}, [hash]);
 	
-		// function to send a tx
-		const handleSendTx = () => {
-			try {
-				sendTransaction({
-					...TEST_TX,
-					gas // Add the gas to the transaction
-				});
-			} catch (err) {
-				console.log('Error sending transaction:', err);
-			}
-		}
-	*/
+
 	// function to sign a msg 
 	const handleSignMsg = async () => {
 		if (!walletProvider || !address) throw Error('user is disconnected');
@@ -90,7 +85,7 @@ export const ActionButtonList = ({ sendHash, sendSignMsg, sendBalance }: ActionB
 		const balance = await provider.getBalance(address);
 		const bnb = formatEther(balance);
 		sendBalance(`${bnb} BNB`);
-		//		sendBalance(balance?.data?.value.toString() + " " + balance?.data?.symbol.toString())
+		console.log(sendBalance(balance?.data?.value.toString() + " " + balance?.data?.symbol.toString()));
 	}
 	return (
 		<div >
@@ -102,6 +97,7 @@ export const ActionButtonList = ({ sendHash, sendSignMsg, sendBalance }: ActionB
 					<button onClick={handleSignMsg}>Sign msg</button>
 					<button onClick={handleSendTx}>Send tx</button>
 					<button onClick={handleGetBalance}>Get Balance</button>
+					<button onClick={refetch}>Get Balance (Wagmi)</button>
 				</div>
 			) : null}
 		</div>
