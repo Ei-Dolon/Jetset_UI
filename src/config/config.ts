@@ -1,6 +1,6 @@
-// import { bsc } from '@reown/appkit/networks'
-// import type { AppKitNetwork } from '@reown/appkit/networks'
-// import { EthersAdapter } from '@reown/appkit-adapter-ethers'
+import { bsc } from '@reown/appkit/networks'
+import type { AppKitNetwork } from '@reown/appkit/networks'
+import { EthersAdapter } from '@reown/appkit-adapter-ethers'
 import { createConfig, http } from 'wagmi';
 import { bsc } from 'wagmi/chains';
 import { injected, walletConnect } from 'wagmi/connectors';
@@ -42,5 +42,5 @@ export const config = createConfig({
 })
 
 
-// export const networks = [bsc] as [AppKitNetwork, ...AppKitNetwork[]]
-// export const ethersAdapter = new EthersAdapter();
+export const networks = [bsc] as [AppKitNetwork, ...AppKitNetwork[]]
+export const ethersAdapter = new EthersAdapter();
