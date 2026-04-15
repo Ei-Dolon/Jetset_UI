@@ -4,13 +4,14 @@ import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/main/",
   build: {
     loader: { '.js': 'jsx' }
   },
   outDir: "build",
   plugins: [react()],
   server: {
-    origin: 'https://dapp.jetsettoken.com',
+    origin: 'https://jetsettoken.com/dapp/jetsetui/',
   },
   resolve: {
     alias: {
