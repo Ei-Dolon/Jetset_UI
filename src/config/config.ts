@@ -1,46 +1,77 @@
-import { bsc } from '@reown/appkit/networks'
-import type { AppKitNetwork } from '@reown/appkit/networks'
-import { EthersAdapter } from '@reown/appkit-adapter-ethers'
-import { createConfig, http } from 'wagmi';
-import { bsc } from 'wagmi/chains';
-import { injected, walletConnect } from 'wagmi/connectors';
+// src/config/config.ts
+import { createConfig, http, fallback, unstable_connector, createStorage } from 'wagmi';
+import { bsc } from "wagmi/chains";
+import {
+  injected,
+  walletConnect,
+  metaMask,
+  coinbaseWallet,
+} from "wagmi/connectors";
+import { DAPP_NAME, DAPP_DESCRIPTION, DAPP_URL, JETSETUI_SVG_URL } from './consts.ts';
 
 declare module 'wagmi' {
-  interface Register {
-    config: typeof config
-  }
+	interface Register {
+		config: typeof config;
+	}
 }
 
-// Get projectId from https://cloud.reown.com
-const projectId = import.meta.env.VITE_PROJECT_ID || "9f0984b9286c65678805e20af26c292d";
-// Add a check for projectId for type safety, although config throws error already.
+const projectId = import.meta.env.VITE_JETSETUI_WC_ID;
 if (!projectId) {
-  console.error("AppKit Initialization Error: Project ID is missing.");
-  // Optionally throw an error or render fallback UI
-  throw new Error('Project ID is not defined');
+	console.error('WalletConnect Initialization Error: Project ID is missing.');
+	// Optionally throw an error or render fallback UI
+	throw new Error('Project ID is missing, or expired, check cloud.reown.com');
 }
 
-export const metadata = {
-  name: 'JetsetUI',
-  description: 'Jetset DApps Frontend',
-  //  url: typeof window !== 'undefined' ? window.location.origin : import.meta.env.JETSET_URL,
-  //  icons: [import.meta.env.JETSET_ICON_URL],
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://jetsettoken.com/dapp/',
-  icons: ['https://jetsettoken.com/dapp/favicon.ico']
-}
+//SSR / Netlify-safe storage
+const storage = typeof window !== 'undefined' ? createStorage({ storage: window.localStorage }) : undefined;
+
+const bscRpc = [
+  "https://bsc-dataseed1.binance.org",
+  "https://bsc-dataseed2.defibit.io",
+  "https://bsc-dataseed3.ninicoin.io",
+];
+
+export const connectors = [
+  	injected({ shimDisconnect: true }),
+
+	  walletConnect({
+			projectId,
+			metadata: {
+				name: DAPP_NAME,
+				description: DAPP_DESCRIPTION,
+				url: DAPP_URL,
+				icons: [JETSETUI_SVG_URL],
+			},
+			showQrModal: true, // critical for mobile
+		}),
+		
+	metaMask({
+			dappMetadata: {
+				name: DAPP_NAME,
+				url: DAPP_URL,
+				iconUrl: JETSETUI_SVG_URL,
+			},
+		}),
+
+		coinbaseWallet({
+			appName: DAPP_NAME,
+			appLogoUrl: JETSETUI_SVG_URL,
+		}),
+;
 
 export const config = createConfig({
-	chains: [bsc],
+	storage,
 	multiInjectedProviderDiscovery: true,
-	connectors: [
-		injected(),
-		walletConnect({ projectId }),
-	],
-  transports: {
-    [bsc.id]: http('https://bsc-dataseed1.binance.org/'),
-  },
-})
-
-
-export const networks = [bsc] as [AppKitNetwork, ...AppKitNetwork[]]
-export const ethersAdapter = new EthersAdapter();
+	chains: [bsc],
+	connectors,
+	transports: {
+    [bsc.id]: fallback([
+			// wallet RPC first (MetaMask / Trust / WC wallets)
+			unstable_connector(injected),
+			// public fallback for pre-connect reads
+			http('https://rpc.ankr.com/bsc'),
+			http(bscRpc),
+			http(), // wagmi default
+		]),
+	ssr: true,
+});
