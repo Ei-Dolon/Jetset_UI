@@ -1,5 +1,5 @@
 ﻿AssetFilename		 	Σx	Σy	Frames	x	y	  Notes
-JetsetLogo.png 		306	132   2		  153	132
+JetsetUILogo.png 	306	132   2		  153	132
 Footer0.png				360	60									Initial paint border without animation for fast initial display
 Footer.png				5760	60	16		360	60
 btnBuy.png			 	212	72	4			53	72
