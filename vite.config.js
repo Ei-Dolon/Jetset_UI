@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/main/",
+  base: "/Jetset_UI/",
   build: {
     loader: { '.js': 'jsx' }
   },
