@@ -1,0 +1,67 @@
+/* Global base styles */
+
+:root {
+  /* Typography - system font stack */
+  /* system-ui = Segoe UI (Windows), Roboto (Android), Ubuntu (Linux), San Francisco (macOS/iOS) */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: system;
+
+	font-weight: 400;
+
+  /* Colours */
+  --color-text: AliceBlue;
+  --color-bg: #121212;
+
+  /* Improve built‑in form & scrollbar theming */
+  color-scheme: dark;
+}
+
+/* Light mode override optional */
+[data-theme="light"] {
+  --color-text: #111;
+  --color-bg: #fff;
+
+  color-scheme: light;
+}
+
+html {
+  font-size: clamp(16px, 1.5vw, 20px);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 150ms ease, color 150ms ease;
+
+  /* Modern text rendering */
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+
+  /* Prevent layout jumps on mobile */
+  min-height: 100dvh;
+}
+
+/* Better defaults for common elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* accessibility defaults -focus per-component */
+:focus-visible {
+  outline: none;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
