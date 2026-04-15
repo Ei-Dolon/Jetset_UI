@@ -162,7 +162,7 @@ body,
 .animateLogo {
   height: 132px;
   width: 153px;
-  background: url("./assets/logoGlow.png") 0 0 no-repeat;
+  background: url("./assets/JetsetUILogo.png") 0 0 no-repeat;
   animation: spriteLogo 0.8s steps(2) infinite;
 }
 
@@ -196,7 +196,7 @@ body,
 .animateReceive {
   height: 70px;
   width: 54px;
-  background: url("./assets/Receive.png") 0 0 no-repeat;
+  background: url("./assets/btnReceive.png") 0 0 no-repeat;
   animation: spriteBtnReceive 1.6s steps(4) infinite;
   cursor: pointer;
 }
@@ -210,7 +210,7 @@ body,
 .animateBuy {
   height: 72px;
   width: 53px;
-  background: url("./assets/Buy.png") 0 0 no-repeat;
+  background: url("./assets/btnBuy.png") 0 0 no-repeat;
   animation: spriteBtnBuy 1.6s steps(4) infinite;
   cursor: pointer;
 }
@@ -224,7 +224,7 @@ body,
 .animateTipTap {
   height: 70px;
   width: 55px;
-  background: url("./assets/TipTap.png") 0 0 no-repeat;
+  background: url("./assets/btnTipTap.png") 0 0 no-repeat;
   animation: spriteBtnTipTap 1.6s steps(4) infinite;
   cursor: pointer;
 }
@@ -265,7 +265,7 @@ body,
 #animateConnect {
   height: 72px;
   width: 66px;
-  background: url("./assets/Connect.png") 0 0 no-repeat;
+  background: url("./assets/btnConnect.png") 0 0 no-repeat;
   animation: spriteBtnConnect 1.6s steps(4) infinite;
   cursor: pointer;
   bottom: 20px;
@@ -287,7 +287,7 @@ button {
 #animateConnecting {
   height: 72px;
   width: 66px;
-  background: url("./assets/Connecting.png") 0 0 no-repeat;
+  background: url("./assets/btnConnecting.png") 0 0 no-repeat;
   animation: spriteBtnConnecting 0.8s steps(2) infinite;
   cursor: pointer;
   z-index: 3;
@@ -296,7 +296,7 @@ button {
 #btnDisconnect {
   height: 72px;
   width: 66px;
-  background: url("./assets/Disconnect.png") 0 0 no-repeat;
+  background: url("./assets/btnDisconnect.png") 0 0 no-repeat;
   cursor: pointer;
   z-index: 3;
 }
