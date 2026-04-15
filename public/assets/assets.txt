@@ -1,16 +1,22 @@
-﻿AssetFilename		x	y	frames
-logoGlow.png		306	132	2	153	132
-border.png			360	60
-Footer.png			5760	60	16	360	60
-Buy.png			212	72	4	53	72
-BuyPress.png		53	72
-Connect.png			264	72	4	66	72
-ConnectPress.png		66	72
-Connecting.png		132	72	2	66	72
-Disconnect.png		66	72
-Receive.png			216	70	4	54	70
-ReceivePress.png		54	70
-TipTap.png			220	70	4	55	70
-TipTapPress.png		55	70
+﻿AssetFilename		 	Σx	Σy	Frames	x	y	  Notes
+JetsetLogo.png 		306	132   2		  153	132
+Footer0.png				360	60									Initial paint border without animation for fast initial display
+Footer.png				5760	60	16		360	60
+btnBuy.png			 	212	72	4			53	72
+BuyHover.png	  		53	72
+btnConnect.png		264	72	4			66	72
+ConnectHover.png  	66	72
+btnConnecting.png   132	72	2			66	72
+btnDisconnect.png 	66	72
+btnReceive.png	 	 216	70	4			54	70
+ReceiveHover.png	   54	70
+btnTipTap.png			220	70	4			55	70
+TipTapHover.png		 55	70
 
+0x405be90996e7f995a08c2fbd8d8822ef5b03466c.svg
+Jetset.svg
+
+texture1.png			200	200
+texture2.png			400	400
+texture3.png			400	400
 
